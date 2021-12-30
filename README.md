@@ -1,5 +1,5 @@
 # my1st-rn ;)
-v-1.0 - syntax
+v1.0 - syntax
 
 ## About this version
 

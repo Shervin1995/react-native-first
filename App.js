@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 
 import data from './app/data/data.json'
+import getMoviesFromApi from './app/data/fetch'
   
 
 //
@@ -25,8 +26,18 @@ class App extends React.Component {
       
       this.state = {
         detail: false,
-        singleDetails: {}
+        singleDetails: {},
+        list: []
       }
+
+    }
+
+    //
+    componentDidMount(){
+      
+      getMoviesFromApi().then(res => {
+        this.setState({list: res})
+      })
 
     }
 
@@ -52,7 +63,7 @@ class App extends React.Component {
     render(){
 
       //
-      const {singleDetails, detail} = this.state;
+      const {singleDetails, detail, list} = this.state;
       
       // ---------------------------------
       // (1) list
@@ -61,14 +72,18 @@ class App extends React.Component {
         return (   
           <View style={styles.container}>
             
+            {/*  */}
             <FlatList 
-              data={data}
+              data={list}
               renderItem={({item}) => {
                 return(
                   <View style={[styles.div2, {borderBottomWidth: 1}]}>
+
+                    {/* (1) */}
                     <View style={{
                       flexDirection: "row", 
                       }} >
+
                       <Text style={{
                         fontWeight: "700",
                         fontSize: 24, 
@@ -76,7 +91,7 @@ class App extends React.Component {
                         paddingTop: 8,
                         marginRight: 10, 
                         width: 50,
-                        height: 50,
+                        height: 50, 
                         borderRadius: 30, 
                         borderColor: "black", 
                         borderWidth: 3, 
@@ -84,20 +99,27 @@ class App extends React.Component {
                         }}>
                         {item.id}
                       </Text>
+
+                      {/*  */}
                       <Text style={styles.title} onPress={() => this.goToDetails(item.id)}> 
-                        {item.name} 
+                        {item.title} 
                       </Text>
+
                     </View>
+
+                    {/* (2) */}
                     <View style={{
                       flexDirection: "row", 
                       }} >
+
                       <Text style={[styles.simpleText, {marginRight: 10}]}>
-                        movie: {item.class}  - 
+                        Release Year: {item.releaseYear}  - 
                       </Text>
-                      <Text style={styles.simpleText}> 
-                        play time: {item.time}
-                      </Text>
+
+
                     </View>
+
+
                   </View>
                 )
               }}
@@ -114,20 +136,29 @@ class App extends React.Component {
         return( 
           <View style={{padding: 30, alignItems: "flex-start"}}> 
             
+            {/*  */}
             <Text style={styles.simpleText}>
               number: {singleDetails.id}  
             </Text>
+
+            {/*  */}
             <Text 
               style={styles.title} 
             > 
               {singleDetails.name}
             </Text>
+
+            {/*  */}
             <Text style={styles.simpleText}>
               movie: {singleDetails.class}  
             </Text>
+
+            {/*  */}
             <Text style={styles.simpleText}>
               play time: {singleDetails.time}
             </Text>
+
+            {/*  */}
             <Text style={[styles.simpleText, {
               color: "blue",
               borderTopWidth: 1,
@@ -137,6 +168,8 @@ class App extends React.Component {
               }]} onPress={this.backToList}>
               Back to List
             </Text> 
+
+
           </View>
         )
       }

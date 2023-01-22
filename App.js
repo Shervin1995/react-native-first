@@ -1,12 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
- import { thisExpression } from '@babel/types';
 import React from 'react';
 import { 
   SafeAreaView,
@@ -23,6 +14,8 @@ import {
 
 import data from './app/data/data.json'
   
+
+//
 class App extends React.Component {  
 
     constructor(props){
@@ -37,6 +30,8 @@ class App extends React.Component {
 
     }
 
+
+    //
     goToDetails(id){  
       this.setState({
         detail: !this.state.detail,
@@ -44,51 +39,23 @@ class App extends React.Component {
       });
     }
 
+
+    //
     backToList(){
       this.setState({
         detail: !this.state.detail
       });
     }
 
+
+    //
     render(){
+
+      //
       const {singleDetails, detail} = this.state;
       
       // ---------------------------------
-      // details
-      // ---------------------------------
-      if (detail) {
-        return( 
-          <View style={{padding: 30, alignItems: "flex-start"}}> 
-            
-            <Text style={styles.simpleText}>
-              number: {singleDetails.id}  
-            </Text>
-            <Text 
-              style={styles.title} 
-            > 
-              {singleDetails.name}
-            </Text>
-            <Text style={styles.simpleText}>
-              movie: {singleDetails.class}  
-            </Text>
-            <Text style={styles.simpleText}>
-              play time: {singleDetails.time}
-            </Text>
-            <Text style={[styles.simpleText, {
-              color: "blue",
-              borderTopWidth: 1,
-              paddingTop: 20, 
-              marginTop: 20,
-              width: 300
-              }]} onPress={this.backToList}>
-              Back to List
-            </Text> 
-          </View>
-        )
-      }
-
-      // ---------------------------------
-      // list
+      // (1) list
       // ---------------------------------
       if (!detail) {
         return (   
@@ -140,10 +107,50 @@ class App extends React.Component {
         );
       }
 
+      // ---------------------------------
+      // (2) details
+      // ---------------------------------
+      if (detail) {
+        return( 
+          <View style={{padding: 30, alignItems: "flex-start"}}> 
+            
+            <Text style={styles.simpleText}>
+              number: {singleDetails.id}  
+            </Text>
+            <Text 
+              style={styles.title} 
+            > 
+              {singleDetails.name}
+            </Text>
+            <Text style={styles.simpleText}>
+              movie: {singleDetails.class}  
+            </Text>
+            <Text style={styles.simpleText}>
+              play time: {singleDetails.time}
+            </Text>
+            <Text style={[styles.simpleText, {
+              color: "blue",
+              borderTopWidth: 1,
+              paddingTop: 20, 
+              marginTop: 20,
+              width: 300
+              }]} onPress={this.backToList}>
+              Back to List
+            </Text> 
+          </View>
+        )
+      }
+
+
+      
     }
 
 };
 
+
+// ------------------------------------------
+// styles
+// ------------------------------------------
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -172,4 +179,6 @@ const styles = StyleSheet.create({
   }
 });
 
+
+// ------------------------------------------
 export default App;

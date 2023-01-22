@@ -6,7 +6,7 @@
 ## in this branch (v1.1)
 
 * [x] button, img, inputtext, view, text, style, 
-* [ ] [fetch api](https://reactnative.dev/docs/network)
+* [x] [fetch api](https://reactnative.dev/docs/network)
 
 
 

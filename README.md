@@ -1,6 +1,7 @@
 # react-native-first (v1.2)
 2023.01.23 
 
+[watch video](https://archive.org/download/2023.01.23-v-1.2-rn-first/2023.01.23%20v1.2%20rn-first.mp4)
 
 
 ## in this branch (v1.2)

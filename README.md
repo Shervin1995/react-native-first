@@ -1,17 +1,23 @@
-# react-native-first (v1.2)
+# react-native-first (v1.3)
 2023.01.23 
 
-[watch video](https://archive.org/download/2023.01.23-v-1.2-rn-first/2023.01.23%20v1.2%20rn-first.mp4)
+[watch video]( )
 
 
-## in this branch (v1.2)
+## in this branch (v1.3)
 
-* [x] button, img, inputtext, view, text, style
-* [x] [fetch api](https://reactnative.dev/docs/network)
-* [x] we use simple switch. navigate between pages (router). [docs](https://reactnative.dev/docs/navigation) does not work!
+2023.01.24: 
+
+2023.01.23:
 * [x] wp rest api
 * [x] [react native html render](https://meliorence.github.io/react-native-render-html/)
 
+2023.01.22:
+* [x] [fetch api](https://reactnative.dev/docs/network)
+* [x] we use simple switch. navigate between pages (router). [docs](https://reactnative.dev/docs/navigation) does not work!
+
+2022.12.01
+* [x] button, img, inputtext, view, text, style
 
 ## Run
  

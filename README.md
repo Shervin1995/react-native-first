@@ -9,6 +9,8 @@
 2023.01.24: 
 
 2023.01.23:
+* [ ] apk 
+* [ ] app icon 
 * [x] wp rest api
 * [x] [react native html render](https://meliorence.github.io/react-native-render-html/)
 
@@ -18,6 +20,7 @@
 
 2022.12.01
 * [x] button, img, inputtext, view, text, style
+
 
 ## Run
  

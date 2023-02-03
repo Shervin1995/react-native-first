@@ -8,6 +8,12 @@
 
 2023.01.24: 
 
+* [x] ERR: no such file or directory in "./App/Component" 
+    * to solve only restart laptop or just restart the server
+* [x] ERR: app down - not farsi app title in `Android/app/src/main/res/values/string.xml`
+* [x] npx react-native init myApp --version 0.70.6
+
+
 2023.01.23:
 * [ ] apk 
 * [ ] app icon 
